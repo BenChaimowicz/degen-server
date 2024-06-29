@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import Fastify from 'fastify';
-import { CreateCustomDegensHandler, GetRandomDegensHandler } from './handlers.js';
+import { CreateCustomDegensHandler, GetDegenHandler, GetRandomDegensHandler } from './handlers.js';
 
 const fastify = Fastify({
     logger: true,
@@ -9,7 +9,8 @@ const fastify = Fastify({
 fastify.get('/', async (req, res) => {
     return { test: 'works' }
 });
-fastify.get('/degen', GetRandomDegensHandler);
+fastify.get('/degen', GetDegenHandler);
+fastify.get('/degen/:id', GetDegenHandler);
 fastify.post('/', CreateCustomDegensHandler);
 
 try {
