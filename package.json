@@ -1,0 +1,39 @@
+{
+  "name": "degen-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.ts",
+    "dbgenerate": "drizzle-kit generate",
+    "dbmigrate": "drizzle-kit migrate",
+    "dbintrospect": "drizzle-kit introspect",
+    "dbcheck": "drizzle-kit check",
+    "dbdrop": "drizzle-kit drop",
+    "dbpush": "drizzle-kit push",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Chaimowicz",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "drizzle-kit": "^0.22.8",
+    "tsx": "^4.15.8",
+    "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "@fastify/postgres": "^5.2.2",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.31.2",
+    "fastify": "^4.28.0",
+    "ollama": "^0.5.2",
+    "pg": "^8.12.0",
+    "postgres": "^3.4.4"
+  }
+}
